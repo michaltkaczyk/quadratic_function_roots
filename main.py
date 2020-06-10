@@ -21,7 +21,6 @@ c = read_coefficient("c")
 
 print("Standard form: f(x) =", "{:+.4f}".format(a), "x^2", "{:+.4f}".format(b), "x", "{:+.4f}".format(c))
 
-# TODO: check if a not 0
 # TODO: space clean up in the functional form
 
 delta = b ** 2 - 4 * a * c
