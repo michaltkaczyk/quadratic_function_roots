@@ -37,10 +37,11 @@ if delta >= 0:
     if delta > 0:
         r1 = (-b - math.sqrt(delta)) / (2 * a)
         r2 = (-b + math.sqrt(delta)) / (2 * a)
+        print("Factored form: f(x) =", "{:+.4f}".format(a), "(x", "{:+.4f}".format(r1), ")(x", "{:+.4f}".format(r2), ")")
         print("Roots of this quadratic function are:", "{:+.4f}".format(r1), "and", "{:+.4f}".format(r2))
-        print("Factored form: f(x) =", "{:+.4f}".format(a), "(x", "{:+.4f}".format(r1),")(x", "{:+.4f}".format(r2), ")")
     else:
         r1 = -b / (2 * a)
+        print("Factored form: f(x) =", "{:+.4f}".format(a), "(x", "{:+.4f}".format(r1), ")^2")
         print("The only root of this quadratic function is:", "{:+.4f}".format(r1))
 else:
     print("This quadratic function has no roots")
