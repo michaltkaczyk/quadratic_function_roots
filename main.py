@@ -11,6 +11,11 @@ def read_coefficient(coefficient_name):
 
 
 a = read_coefficient("a")
+
+if a == 0:
+    print("The a coefficient cannot be equal to zero")
+    sys.exit(1)
+
 b = read_coefficient("b")
 c = read_coefficient("c")
 
