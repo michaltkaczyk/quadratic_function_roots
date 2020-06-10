@@ -14,11 +14,10 @@ a = read_coefficient("a")
 b = read_coefficient("b")
 c = read_coefficient("c")
 
-print("Standard form: f(x) =", a, "x^2 +", b, "x +", c)
+print("Standard form: f(x) =", "{:+.4f}".format(a), "x^2", "{:+.4f}".format(b), "x", "{:+.4f}".format(c))
 
 # TODO: check if a not 0
-# TODO: format - 4 decimal places
-# TODO: minus signs in the functional form
+# TODO: space clean up in the functional form
 
 delta = b ** 2 - 4 * a * c
 p = -b / (2 * a)
@@ -26,17 +25,17 @@ q = -delta / (4 * a)
 
 # TODO: do not duplicate r1 and p
 
-print("Vertex form: f(x) =", a, "(x -", p, ")^2 +", q)
+print("Vertex form: f(x) =", "{:+.4f}".format(a), "(x", "{:+.4f}".format(p), ")^2", "{:+.4f}".format(q))
 
 if delta >= 0:
     roots = []
     if delta > 0:
         r1 = (-b - math.sqrt(delta)) / (2 * a)
         r2 = (-b + math.sqrt(delta)) / (2 * a)
-        print("Roots of this quadratic function are:", r1, "and", r2)
-        print("Factored form: f(x) =", a, "(x -", r1, ")(x - ", r2, ")")
+        print("Roots of this quadratic function are:", "{:+.4f}".format(r1), "and", "{:+.4f}".format(r2))
+        print("Factored form: f(x) =", "{:+.4f}".format(a), "(x", "{:+.4f}".format(r1),")(x", "{:+.4f}".format(r2), ")")
     else:
         r1 = -b / (2 * a)
-        print("The only root of this quadratic function is:", r1)
+        print("The only root of this quadratic function is:", "{:+.4f}".format(r1))
 else:
     print("This quadratic function has no roots")
