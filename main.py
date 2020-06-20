@@ -30,10 +30,8 @@ delta = b ** 2 - 4 * a * c
 p = -b / (2 * a)
 q = -delta / (4 * a)
 
-# TODO: do not duplicate r1 and p
-
 print("Vertex form: f(x) = ", format_coefficient(a),
-      " (x ", format_coefficient(p), ")^2 ", format_coefficient(q), sep="")
+      " (x ", format_coefficient(-p), ")^2 ", format_coefficient(q), sep="")
 
 if delta >= 0:
     roots = []
@@ -41,11 +39,12 @@ if delta >= 0:
         r1 = (-b - math.sqrt(delta)) / (2 * a)
         r2 = (-b + math.sqrt(delta)) / (2 * a)
         print("Factored form: f(x) = ", format_coefficient(a),
-              " (x ", format_coefficient(r1), ")(x ", format_coefficient(r2), ")", sep="")
-        print("Roots of this quadratic function are:", "{:-.4f}".format(r1), "and", "{:-.4f}".format(r2))
+              " (x ", format_coefficient(-min(r1, r2)), ") (x ", format_coefficient(-max(r1, r2)), ")", sep="")
+        print("Roots of this quadratic function are:",
+              "{:-.4f}".format(min(r1, r2)), "and", "{:-.4f}".format(max(r1, r2)))
     else:
-        r1 = -b / (2 * a)
-        print("Factored form: f(x) = ", format_coefficient(a), " (x ", format_coefficient(r1), ")^2", sep="")
-        print("The only root of this quadratic function is:", "{:-.4f}".format(r1))
+        p = -b / (2 * a)
+        print("Factored form: f(x) = ", format_coefficient(a), " (x ", format_coefficient(-p), ")^2", sep="")
+        print("The only root of this quadratic function is:", "{:-.4f}".format(p))
 else:
     print("This quadratic function has no roots")
